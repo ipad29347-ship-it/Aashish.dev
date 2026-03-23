@@ -190,12 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Basic anti-spam (honeypot)
-    const botField = contactForm.elements["bot-field"].value;
-    if (botField) {
-      return;
-    }
-
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
 
@@ -218,10 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
     formStatus.classList.remove("show", "success", "error");
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("https://formspree.io/f/mvzwjnoe", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        headers: { "Accept": "application/json" },
+        body: formData,
       });
 
       if (response.ok) {
