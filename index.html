@@ -279,21 +279,8 @@
               class="contact-form"
               name="contact"
               method="POST"
-              action="/"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              action="https://formspree.io/f/YOUR_UNIQUE_ID"
             >
-              <!-- Netlify hidden field -->
-              <input type="hidden" name="form-name" value="contact" />
-
-              <!-- Honeypot field for anti-spam -->
-              <p style="display: none">
-                <label>
-                  Don’t fill this out if you’re human:
-                  <input name="bot-field" />
-                </label>
-              </p>
-
               <div class="form-group">
                 <label for="name">Name</label>
                 <input
@@ -329,9 +316,6 @@
 
               <button type="submit" class="btn btn-primary submit-btn">
                 <span class="btn-text">Send Message</span>
-                <span class="loader" style="display: none">
-                  <span class="cyber-scanner"></span>
-                </span>
               </button>
 
               <div id="formStatus" class="form-status"></div>
