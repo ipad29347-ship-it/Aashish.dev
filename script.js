@@ -184,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
   const submitBtn = contactForm.querySelector(".submit-btn");
   const btnText = submitBtn.querySelector(".btn-text");
-  const loader = submitBtn.querySelector(".loader");
   const formStatus = document.getElementById("formStatus");
 
   contactForm.addEventListener("submit", async (e) => {
@@ -207,7 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update UI to loading state
     btnText.style.display = "none";
-    loader.style.display = "block";
     submitBtn.disabled = true;
     formStatus.classList.remove("show", "success", "error");
 
@@ -236,7 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } finally {
       // Restore UI
       btnText.style.display = "block";
-      loader.style.display = "none";
       submitBtn.disabled = false;
     }
   });
