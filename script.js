@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Hover effect for custom cursor
-  const interactables = document.querySelectorAll('a, button, input, textarea, .project-card, .social-icon');
+  const interactables = document.querySelectorAll('a, button, input, textarea, .project-card, .service-card, .social-icon');
   interactables.forEach(el => {
     el.addEventListener('mouseenter', () => customCursor?.classList.add('hovering'));
     el.addEventListener('mouseleave', () => customCursor?.classList.remove('hovering'));
@@ -107,9 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 600);
   });
 
-  // Project Card Spotlight Effect
-  const projectCards = document.querySelectorAll('.project-card');
-  projectCards.forEach(card => {
+  // Project Card & Service Card Spotlight Effect
+  const spotlightCards = document.querySelectorAll('.project-card, .service-card');
+  spotlightCards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
